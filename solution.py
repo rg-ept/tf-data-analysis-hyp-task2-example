@@ -5,7 +5,9 @@ import numpy as np
 chat_id = 42877418
 
 def solution(x: np.array, y: np.array) -> bool:
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+   res = stats.cramervonmises_2samp([x, y])
+
+    if res.pval < 0.02:
+        return True
+    else:
+        return False
